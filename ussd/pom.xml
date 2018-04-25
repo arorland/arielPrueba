@@ -1,0 +1,34 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+      <groupId>org.tigo</groupId>
+      <artifactId>parent</artifactId>
+      <relativePath>../pom.xml</relativePath>
+      <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>ussd</artifactId>
+    <name>SERVICE - ${project.artifactId}</name>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.robotframework</groupId>
+          <artifactId>robotframework-maven-plugin</artifactId>
+          <version>1.4.6</version>
+          <executions>
+              <execution>
+    						<phase>test</phase>
+              </execution>
+           </executions>
+          <configuration>
+            <extraPathDirectories>
+              <extraPathDirectory>src/test/resources/robotframework/libraries</extraPathDirectory>
+            </extraPathDirectories>
+            <testCasesDirectory>src/test/robotframework/Suites</testCasesDirectory>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+</project>
